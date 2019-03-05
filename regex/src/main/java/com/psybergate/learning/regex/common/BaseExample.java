@@ -1,4 +1,4 @@
-package com.psybergate.learning.regex.example;
+package com.psybergate.learning.regex.common;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -6,10 +6,10 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class BaseRegex {
+public abstract class BaseExample implements Example {
 
-    protected boolean contains(String sentence, String text) {
-        Pattern pattern = Pattern.compile(sentence);
+    protected boolean contains(String regex, String text) {
+        Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
         return matcher.find();
     }
@@ -22,6 +22,14 @@ public abstract class BaseRegex {
             matches.add(matcher.group());
         }
         return matches;
+    }
+
+    protected void printContains(boolean contain) {
+        if (contain) {
+            System.out.println("Matches exist");
+        } else {
+            System.out.println("No matches");
+        }
     }
 
     protected void printAll(Collection<String> strings) {

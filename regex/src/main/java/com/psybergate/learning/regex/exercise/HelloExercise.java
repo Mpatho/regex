@@ -1,8 +1,10 @@
 package com.psybergate.learning.regex.exercise;
 
 
+import com.psybergate.learning.regex.common.BaseExercise;
+
 /**
- * Write a util method that counts the number of matcher for given regex and text.
+ * Write a method that counts the number of matches for given regex and text.
  */
 public class HelloExercise extends BaseExercise {
 

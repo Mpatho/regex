@@ -1,4 +1,4 @@
-package com.psybergate.learning.regex.example;
+package com.psybergate.learning.regex.common;
 
 import org.junit.Test;
 
@@ -7,17 +7,22 @@ import java.util.Set;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class BaseRegexTest {
+public class BaseExampleTest {
 
     private final String text = "Hello Regex, hoping this will be funny.";
-    private BaseRegex baseRegex = new BaseRegex() {
+    private BaseExample baseExample = new BaseExample() {
+        public void runContains() {
+        }
+
+        public void runFindAll() {
+        }
     };
 
     @Test
     public void containHelloRegex() {
         String sentence = "Hello Regex";
 
-        boolean result = baseRegex.contains(sentence, text);
+        boolean result = baseExample.contains(sentence, text);
 
         assertThat(result, is(true));
     }
@@ -26,7 +31,7 @@ public class BaseRegexTest {
     public void containHelloRegexp() {
         String sentence = "Hello Regexp";
 
-        boolean result = baseRegex.contains(sentence, text);
+        boolean result = baseExample.contains(sentence, text);
 
         assertThat(result, is(false));
     }
@@ -36,7 +41,7 @@ public class BaseRegexTest {
         String regex = "Hello Rege[x]*";
         String expected = "Hello Regex";
 
-        Set<String> result = baseRegex.findAll(regex, text);
+        Set<String> result = baseExample.findAll(regex, text);
 
         assertThat(result.contains(expected), is(true));
     }
