@@ -1,12 +1,11 @@
 package com.psybergate.learning.regex.exercise;
 
-
 import com.psybergate.learning.regex.common.Exercise;
 
 /**
- * Write a method that counts the number of character 'e' in any given text.
+ * print all the numbers greeter than or equal a million.
  */
-public class HelloExercise implements Exercise {
+public class QuantifiersExercise implements Exercise {
     @Override
     public void answer(String text) {
 
